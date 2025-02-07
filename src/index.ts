@@ -18,6 +18,12 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 app.use('/api/auth', authRouter);
 
+app.use((req, res, next) => {
+    const error: any = new Error("Not found");
+    error.status = 404;
+    next(error);
+  });
+
 app.listen(PORT, () => {
     console.log(`Server running on PORT ${PORT}`)
     connectDB();
