@@ -10,8 +10,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(cors({
-    // origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'https://j6yy3f-5173.csb.app', 'https://vtkq3y-5173.csb.app'],
-    origin: '*',
+    origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'https://j6yy3f-5173.csb.app', 'https://vtkq3y-5173.csb.app', 'https://note-app-frontend-negativ.vercel.app'],
     credentials: true,
 }))
 app.use(express.json({ limit: '10mb' })); // Set a higher limit
